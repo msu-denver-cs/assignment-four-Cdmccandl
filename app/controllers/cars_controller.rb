@@ -66,10 +66,9 @@ class CarsController < ApplicationController
   end
 
   def search
-  @cars = Car.where("model like ? OR country like ? OR VIN like ?",
-    "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%")
-  render :index
-end
+    @cars = Car.where("model like ? OR country like ? OR VIN like ?","%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%")
+    render :index
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
